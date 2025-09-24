@@ -1,0 +1,95 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Remote AFP share cache files
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode
+## Build and intermediate
+build/
+DerivedData/
+
+## Xcode user settings
+xcuserdata/
+*.xcuserstate
+
+## Xcode project files (user-specific variants)
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Source control and workspace metadata
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+
+# Archives
+*.xcarchive
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Packages/
+Package.pins
+# Package.resolved — 通常建議提交到版本控制
+# Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Accio
+Accio/Artifacts/
+Accio/Packages/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Code coverage
+*.profdata
+*.gcno
+*.gcda
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# IDEs / Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
