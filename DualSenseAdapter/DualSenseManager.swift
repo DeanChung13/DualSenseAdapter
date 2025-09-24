@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import Observation
 import GameController
 
-@Observable
 class DualSenseManager {
     
     init() {
