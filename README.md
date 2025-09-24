@@ -55,3 +55,10 @@ if #available(iOS 14.0, macOS 11.0, tvOS 14.0, *) {
         }
     }
 }
+```
+
+## ☕ Support
+
+If this project helps you, consider supporting me:  
+
+<a href="https://www.buymeacoffee.com/wenway13" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
