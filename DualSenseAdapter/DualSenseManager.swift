@@ -13,7 +13,7 @@ import GameController
 class DualSenseManager {
     
     init() {
-        // 監聽手把連線
+        // Observe controller connection
         NotificationCenter.default.addObserver(
             forName: .GCControllerDidConnect,
             object: nil,
@@ -25,7 +25,7 @@ class DualSenseManager {
             }
         }
         
-        // 監聽手把斷線
+        // Observe controller disconnection
         NotificationCenter.default.addObserver(
             forName: .GCControllerDidDisconnect,
             object: nil,
@@ -53,11 +53,11 @@ class DualSenseManager {
         GCController.shouldMonitorBackgroundEvents = true
     }
     
-    // 設定按鈕事件
+    // Configure button events
     func setupController(_ controller: GCController) {
         guard let gamepad = controller.extendedGamepad else { return }
         
-        // ABXY 按鈕
+        // ABXY buttons
         gamepad.buttonA.valueChangedHandler = { button, value, pressed in
             print("A \(pressed ? "pressed" : "released") value=\(value)")
         }
@@ -71,7 +71,7 @@ class DualSenseManager {
             print("Y \(pressed ? "pressed" : "released") value=\(value)")
         }
         
-        // 肩鍵 L1/R1
+        // Shoulder buttons L1/R1
         gamepad.leftShoulder.valueChangedHandler = { button, value, pressed in
             print("L1 \(pressed ? "pressed" : "released") value=\(value)")
         }
@@ -79,7 +79,7 @@ class DualSenseManager {
             print("R1 \(pressed ? "pressed" : "released") value=\(value)")
         }
         
-        // 扳機 L2/R2
+        // Triggers L2/R2
         gamepad.leftTrigger.valueChangedHandler = { button, value, pressed in
             print("L2 \(pressed ? "pressed" : "released") value=\(value)")
         }
@@ -87,7 +87,7 @@ class DualSenseManager {
             print("R2 \(pressed ? "pressed" : "released") value=\(value)")
         }
         
-        // 方向鍵 D-Pad（同時監聽軸與個別方向鍵）
+        // D-Pad (listen to axes and individual directions)
         gamepad.dpad.valueChangedHandler = { dpad, x, y in
             print("DPad axes: x=\(x), y=\(y)")
         }
@@ -104,7 +104,7 @@ class DualSenseManager {
             print("DPad Right \(pressed ? "pressed" : "released") value=\(value)")
         }
         
-        // 左右搖桿軸
+        // Left and right thumbstick axes
         gamepad.leftThumbstick.valueChangedHandler = { dpad, x, y in
             print("Left stick: x=\(x), y=\(y)")
         }
@@ -112,7 +112,7 @@ class DualSenseManager {
             print("Right stick: x=\(x), y=\(y)")
         }
         
-        // 搖桿按鈕 L3/R3（如果控制器有提供）
+        // Thumbstick buttons L3/R3 (if available on the controller)
         if let l3 = gamepad.leftThumbstickButton {
             l3.valueChangedHandler = { button, value, pressed in
                 print("L3 \(pressed ? "pressed" : "released") value=\(value)")
@@ -124,7 +124,7 @@ class DualSenseManager {
             }
         }
         
-        // 系統相關按鈕（依裝置/控制器而定）
+        // System-related buttons (device/controller dependent)
         gamepad.buttonMenu.valueChangedHandler = { button, value, pressed in
             print("Menu \(pressed ? "pressed" : "released")")
         }
@@ -141,7 +141,7 @@ class DualSenseManager {
         }
     }
     
-    // 模擬鍵盤按下
+    // Simulate keyboard key press
     func simulateKeyPress(_ key: String) {
         DispatchQueue.main.async {
             let source = CGEventSource(stateID: .combinedSessionState)
@@ -153,7 +153,7 @@ class DualSenseManager {
         }
     }
     
-    // 對應字母到 macOS 虛擬鍵碼
+    // Map letters to macOS virtual key codes
     func keyCode(for char: String) -> CGKeyCode {
         switch char.lowercased() {
         case "a": return 0
@@ -186,3 +186,4 @@ class DualSenseManager {
         }
     }
 }
+

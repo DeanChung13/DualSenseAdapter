@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let dualSenseManager = DualSenseManager()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // 建立 Menu Bar icon
+        // Create Menu Bar icon
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "gamecontroller", accessibilityDescription: "DualSense")
@@ -29,3 +29,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.shared.terminate(nil)
     }
 }
+
